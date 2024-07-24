@@ -1,0 +1,15 @@
+@import 'reset';
+@import 'variables.scss';
+
+html {
+	font-size: 16px;
+	body {
+		background: var(--bgColor);
+		font-size: var(--baseSize);
+		font-family: var(--pointFont);
+
+		li {
+			border-bottom: 2px solid #ddd;
+		}
+	}
+}
