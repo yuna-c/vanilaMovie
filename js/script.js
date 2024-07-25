@@ -1,2 +1,4 @@
 import fetchData from './FetchData.js';
-fetchData();
+import { moviesList } from './movieList.js';
+
+moviesList();

@@ -16,7 +16,7 @@ const fetchData = async () => {
 
 		const data = await response.json();
 		console.log(`data success \n`, data);
-		return data;
+		return data.results; // results : api 값이 있는 곳
 	} catch (err) {
 		// 발생했을 때 실행 중지를 처리할 로직
 		throw err;
