@@ -1,6 +1,10 @@
+import { config } from './config.js';
+
+console.log(config.APIKEY);
+
 const fetchData = async () => {
 	// async가 붙은 함수는 무조건 프로미스 객체를 반환하는 함수
-	const API_KEY = '1305f5a636e58d51295d77ce2e7606b7';
+	const API_KEY = config.TMDB_KEY;
 	const PAGE_NUM = '&page=1';
 	const BASE_URL = 'https://api.themoviedb.org/3/movie/popular?';
 	const RESULT_URL = `${BASE_URL}api_key=${API_KEY}&language=ko-KR${PAGE_NUM}`;
