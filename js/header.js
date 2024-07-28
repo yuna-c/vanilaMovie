@@ -19,7 +19,7 @@ export const createHeader = () => {
 	headerDiv.classList = 'bind';
 	headerTitle.classList = 'tit';
 
-	headerA.setAttribute('href', '/index.html');
+	headerA.setAttribute('href', '/vanilaMovie/index.html');
 	searchInput.type = 'text';
 	searchButton.type = 'button';
 	searchInput.value;
@@ -45,13 +45,13 @@ export const createHeader = () => {
 
 // 검색 구현
 const handleSearch = () => {
-	const dataList = document.querySelectorAll('.movie-item');
+	const list = document.querySelectorAll('.movie-item');
 	// document.querySelectorAll로 가져오면 1개 이상의 dom 객체가 존재할 경우, 노드의 콜렉션으로 리턴
 	// NodeList는 .map, .reduce, .filter 함수 사용이 불가능, 이 경우에는 NodeList를 Array 로 변환 후 작업
 	let search = document.querySelector('.search-input').value; // Assignment(할당) to constant variable. let으로 값 재할당하기
 	if (search !== '') {
-		[...dataList].forEach((movie) => {
-			console.log(dataList);
+		[...list].forEach((movie) => {
+			console.log(list);
 			const title = movie.querySelector('h3').textContent.toLowerCase();
 
 			if (title.includes(search)) {

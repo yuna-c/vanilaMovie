@@ -4,16 +4,16 @@ import fetchData from './FetchData.js';
 export const createCard = async () => {
 	const app = document.getElementById('app');
 	const section = document.createElement('section');
-	const movieList = document.createElement('ul');
+	const movieUl = document.createElement('ul');
 
 	section.id = 'section';
-	movieList.id = 'movie-list';
+	movieUl.id = 'movie-list';
 	app.appendChild(section);
-	section.appendChild(movieList);
+	section.appendChild(movieUl);
 
 	const movies = await fetchData();
-	movieList.innerHTML += cardList(movies);
-	movieList.addEventListener('click', handleClick);
+	movieUl.innerHTML += cardList(movies);
+	movieUl.addEventListener('click', handleClick);
 };
 
 // id

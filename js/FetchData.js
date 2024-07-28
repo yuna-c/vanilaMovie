@@ -5,6 +5,7 @@ const fetchData = async () => {
 	// async가 붙은 함수는 무조건 프로미스 객체를 반환하는 함수
 	const API_KEY = config.TMDBKEY;
 	const BASE_URL = 'https://api.themoviedb.org/3/movie/top_rated?';
+	// 'https://api.themoviedb.org/3/movie/popular?'; 최신영화
 	const RESULT_URL = `${BASE_URL}language=ko-KR&api_key=${API_KEY}`;
 	const SEARCH_API = `https://api.themoviedb.org/3/search/movie?language=ko-KR&api_key=${API_KEY}&query="`; // 페이지네이션 실패
 
