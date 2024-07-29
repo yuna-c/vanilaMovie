@@ -1,5 +1,5 @@
 // 헤더
-export const createHeader = () => {
+const createHeader = () => {
 	const app = document.getElementById('app');
 	const header = document.createElement('header');
 	const headerDiv = document.createElement('div');
@@ -62,6 +62,7 @@ const handleSearch = () => {
 		});
 	} else {
 		alert('검색어를 입력해 주세요.');
+		search = '';
 	}
 };
 

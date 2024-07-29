@@ -138,7 +138,10 @@ html body #app header .bind {
   justify-content: space-between;
   align-items: center;
 }
-html body #app header .bind .tit {
+html body #app header .bind a {
+  color: var(--baseColor);
+}
+html body #app header .bind a .tit {
   font-size: 1.5rem;
   font-weight: 700;
 }
@@ -192,7 +195,7 @@ html body #app section ul li .info {
 html body #app section ul li .info h3 {
   width: 250px;
   margin-bottom: 10px;
-  font-size: 18px;
+  font-size: 1.1rem;
   white-space: nowrap;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -244,6 +247,32 @@ html body #app section ul li .overview p span {
 }
 html body #app section ul li:hover .overview {
   transform: translateY(0);
+}
+html body #app section .pagination {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+html body #app section .pagination span {
+  min-width: 30px;
+  font-size: 1.1rem;
+  padding: 2px 5px;
+  display: flex;
+  justify-content: center;
+  border: 1px solid var(--baseColor);
+  border-radius: 3px;
+}
+html body #app section .pagination span:hover {
+  cursor: pointer;
+  background-color: rgba(25, 25, 25, 0.2588235294);
+  border: 1px solid transparent;
+  color: #fff;
+}
+html body #app section .pagination span:hover.on {
+  cursor: pointer;
+  color: var(--baseColor);
+  font-weight: 500;
 }
 html body #app footer {
   height: auto;
