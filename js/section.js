@@ -25,7 +25,7 @@ async function fetchData(url, page) {
 }
 
 // 섹션
-const createCard = async (movies) => {
+const createCard = (movies) => {
 	const app = document.getElementById('app');
 	const movieUl = document.createElement('ul');
 
