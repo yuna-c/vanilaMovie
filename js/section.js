@@ -1,15 +1,19 @@
 import { config } from './config.js';
 // import createFooter from './footer.js';
 
-// 데이터 가져오기
+// get data
 const API_KEY = config.TMDBKEY;
 const BASE_URL = 'https://api.themoviedb.org/3/movie/top_rated?';
 const RESULT_URL = `${BASE_URL}language=ko-KR&api_key=${API_KEY}`;
 const SEARCH_URL = `https://api.themoviedb.org/3/search/movie?language=ko-KR&api_key=${API_KEY}&query="`;
+
+// 섹션 초기 값
 const section = document.createElement('section');
-
 fetchData(RESULT_URL, 1);
+let searchPage = ''; // 페이지 네이션 검색 초기값
+let currentPage = 1; // 현재 페이지 넘버
 
+// 데이터
 async function fetchData(url, page) {
 	try {
 		// 예외 발생 가능성 있는 데이터(await로 대기시켰다가 실행 준비)
@@ -32,12 +36,11 @@ const createCard = (movies) => {
 	section.id = 'section';
 	movieUl.id = 'movie-list';
 
-	// app.appendChild(section);
 	app.insertAdjacentElement('beforeend', section);
-
-	section.innerHTML = '';
+	section.innerHTML = ''; // // 섹션 새로 고침(밑으로 한 section 더 생기는 것 방지)
 	// console.log(Array.isArray(movies));
 
+	// 카드 출력
 	movies.forEach((movie) => {
 		const { id, title, poster_path, vote_average, overview } = movie;
 
@@ -72,9 +75,6 @@ const createCard = (movies) => {
 };
 
 const createPagination = () => {
-	let searchPage = ''; // 검색어
-	let currentPage = 1; // 현재 페이지 num
-
 	const pagination = document.createElement('div');
 	pagination.className = 'pagination';
 	pagination.innerHTML = '';
@@ -101,4 +101,4 @@ const createPagination = () => {
 	return pagination;
 };
 
-export default createCard;
+export { createCard, fetchData };

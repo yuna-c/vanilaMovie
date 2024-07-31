@@ -43,7 +43,7 @@ const createHeader = () => {
 	});
 };
 
-// 검색 구현
+// 검색
 const handleSearch = () => {
 	const list = document.querySelectorAll('.movie-item');
 	// document.querySelectorAll로 가져오면 1개 이상의 dom 객체가 존재할 경우, 노드의 콜렉션으로 리턴
